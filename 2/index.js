@@ -1,5 +1,7 @@
 'use strict'
 
+const util = require('util');
+
 // классическое определение функции
 function fn1(text) {
     console.log(`Show text : ${text}`);    
@@ -80,13 +82,17 @@ setTimeout(() => {
 
 
 // для бизнеслогики у нас есть promise(resolve, reject)
-const ozjidanie = (timeout) => new Promise((resolve, reject) => setTimeout(resolve, timeout*1000));
+const ozjidanie = util.promisify(setTimeout);
+// const ozjidanie = (timeout) => new Promise((resolve, reject) => setTimeout(resolve, timeout*1000));
 
 async function testAsync() {
+    const res = await ozjidanie(100, 'result');
+    console.log(res);  // Prints 'result'
+
     fn2('Start1');
-    await ozjidanie(5);
+    await ozjidanie(5000);
     fn2('Work 1');
-    await ozjidanie(5);
+    await ozjidanie(5000);
     fn2('Work 2');
 }
 

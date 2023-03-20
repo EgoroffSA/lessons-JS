@@ -1,0 +1,11 @@
+{
+  "name": "lessonjs",
+  "version": "1.0.0",
+  "description": "Уроки javaScript ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ESA",
+  "license": "ISC"
+}
