@@ -30,4 +30,5 @@ Promise.all([
     promiseTimerData(2500, 'Promise 2'),
     promiseTimerData(4000, 'Promise 3'),
 ])
-.then(values => console.log(values));
+.then(values => console.log(values))
+.catch(error => console.log(error));
