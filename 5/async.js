@@ -18,9 +18,12 @@ async function main() {
     console.log('Прошла секунда');
     await promiseTimer(5000);
     console.log('Прошла вторая');
-    await promiseTimer(3000);
-    console.log('Прошло 3 секунды')
-    
+	try {
+		await promiseTimer(3000);
+		console.log('Прошло 3 секунды')    
+	} catch (error) {
+		console.error(error);
+	}
 }
 
 main()
